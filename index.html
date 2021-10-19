@@ -21,23 +21,23 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
-<button class="hamburger" type="button"><span></span><span></span><span></span></button>
-
 <body>
 
     <div class="wrapper">
 
         <header class="header">
-            header
+            <!-- <button class="hamburger" type="button"><span></span><span></span><span></span></button> -->
         </header>
 
-        <!-- content -->
+        <main class="site-content">
+            main content
+        </main>
 
         <footer class="footer">
             footer
         </footer>
 
-        <button data-fancybox="dialog" data-src="#popup" class="btn">
+        <button data-fancybox="dialog" data-src="#popup_1" class="btn">
             Оставить заявку
         </button>
 
@@ -55,22 +55,22 @@
             </div>
         </div><!-- / slider -->
 
-        <div id="popup" class="popup" style="display: none;">
-            <form class="">
+        <div id="popup_1" style="display: none;">
+            <form class="ajax-form">
                 <div class="form__title">Оставьте заявку и мы вам перезвоним</div>
                 <input type="text" inputmode="text" name="Имя" placeholder="Имя">
                 <input type="tel" inputmode="tel" name="Телефон" placeholder="Телефон">
                 <input type="email" inputmode="email" name="E-mail" placeholder="E-mail*" required>
-                <textarea name="Собщение" placeholder="Собщение"></textarea>
+                <textarea name="Сообщение" placeholder="Сообщение"></textarea>
 
                 <button type="submit" class="btn">Отправить</button>
 
-                <input type="hidden" name="admin_email" value="rlytrue2@gmail.com">
                 <!-- <input type="hidden" name="project_name" value="<?php /* bloginfo('name'); */ ?>"> -->
+                <input type="hidden" name="admin_email" value="rlytrue2@gmail.com">
                 <!-- <input type="hidden" name="admin_email" value="<?php /* bloginfo('admin_email'); */ ?>"> -->
                 <!-- <input type="hidden" name="form_subject" value="Форма со страницы <?php /* echo 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; */ ?>"> -->
             </form>
-        </div>
+        </div><!-- /popup -->
 
         <script src="./assets/libs/jquery-3.5.1.min.js"></script>
         <script src="./assets/libs/swiper-7.0.8/swiper-bundle.min.js"></script>
