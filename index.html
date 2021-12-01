@@ -8,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- <link rel="preload" href="./assets/fonts/CeraProLight.woff2" as="font" type="font/woff2" crossorigin="anonymous"> -->
+    <!-- <link rel="preload" as="font" href="./assets/fonts/CeraProLight.woff2" type="font/woff2" crossorigin="anonymous"> -->
+    <!-- <link rel="preload" as="image" href="./assets/img/image.jpg"> -->
 
     <link rel="icon" href="./assets/img/favicon.ico">
 
@@ -53,6 +54,44 @@
                 <div class="swiper-button-prev swiper-button-prev-1x"></div>
                 <div class="swiper-button-next swiper-button-next-1x"></div>
             </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const swiper_1x = new Swiper('.swiper-1x', {
+                        loop: true,
+                        speed: 700,
+                        autoplay: { delay: 5000 },
+                        navigation: { prevEl: ".swiper-button-prev-1x", nextEl: ".swiper-button-next-1x" },
+                        // pagination: { el: ".swiper-pagination-1x", clickable: true },
+                        pagination: {
+                            el: '.swiper-pagination-1x',
+                            type: 'custom',
+                            renderCustom: function(swiper, current, total) {
+                                let indexTotal = total >= 10 ? total : `0${total}`;
+                                let indexCurrent = current >= 10 ? total : `0${current}`;
+
+                                return `${indexTotal} / ${indexCurrent}`;
+                            }
+                        },
+                        spaceBetween: 30,
+                        grabCursor: true,
+                        allowTouchMove: true, // touch mouse
+                        touchStartPreventDefault: false, // mouseup events
+                        breakpoints: { // mobile first
+                            0: { slidesPerView: 1 },
+                            480: { slidesPerView: 2 },
+                            768: { slidesPerView: 3 },
+                            992: { slidesPerView: 3 },
+                            1200: { slidesPerView: 4 }
+                        },
+                        on: {
+                            init() {
+                                this.el.addEventListener('mouseenter', () => this.autoplay.stop());
+                                this.el.addEventListener('mouseleave', () => this.autoplay.start());
+                            }
+                        },
+                    });
+                });
+            </script>
         </div><!-- / slider -->
 
         <div id="popup_1" style="display: none;">

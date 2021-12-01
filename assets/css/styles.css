@@ -1,13 +1,13 @@
 /* Fonts
 100 Thin
-200 Extra Light
+200 Extra Light (Ultra Light)
 300 Light
-400 Regular / Normal
-500 Medium;
-600 Semibold / Demibold
+400 Regular (Normal)
+500 Medium
+600 Semibold (Demibold)
 700 Bold
-800 Heavy / Extra Bold / Ultra Bold
-900 Black
+800 Extra Bold (Ultra Bold)
+900 Black (Heavy)
 */
 
 @font-face {
@@ -24,6 +24,7 @@
     --ff: 'Montserrat', sans-serif;
     --accent: #FFD600;
     --textColor: #000;
+    --transition: 0.2s ease-out;
 }
 
 /* Minireset */
@@ -139,7 +140,7 @@ td:not([align]), th:not([align]) {
 ::selection {
     background-color: var(--accent);
     color: #fff;
-    transition: background-color 0.3s ease-out;
+    transition: background-color var(--transition);
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
@@ -150,7 +151,7 @@ td:not([align]), th:not([align]) {
 button, input[type=submit] {
     border: 0;
     cursor: pointer;
-    transition: 0.2s linear all;
+    transition: var(--transition);
 }
 
 select[disabled], button[disabled] {
@@ -161,7 +162,7 @@ label, a {
     user-select: none;
 }
 
-button:focus, a:focus, * [role="button"]:focus, input:focus, textarea:focus {
+button:focus, button:focus-visible, a:focus, * [role="button"]:focus, input:focus, textarea:focus {
     outline: none !important;
 }
 
@@ -241,7 +242,7 @@ b, strong {
 }
 
 a, input, svg path {
-    transition: 0.2s linear all;
+    transition: var(--transition);
 }
 
 a {
@@ -343,7 +344,7 @@ body.compensate-for-scrollbar {
     height: var(--height);
     background: transparent;
     border: none;
-    transition: 0.25s ease-in-out;
+    transition: var(--transition);
     outline: none;
     z-index: 2;
     cursor: pointer;
@@ -367,7 +368,7 @@ body.compensate-for-scrollbar {
     opacity: 1;
     left: 0;
     transform: rotate(0deg);
-    transition: 0.25s ease-in-out;
+    transition: var(--transition);
     pointer-events: none;
 }
 
