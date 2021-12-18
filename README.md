@@ -1,1 +1,1 @@
-# o2t-tpl
+# Simply template
