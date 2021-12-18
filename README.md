@@ -1,1 +1,1 @@
-# Simply template
+# Simply HTML template
